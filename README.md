@@ -13,7 +13,8 @@ docker run \
   -p 9091:9091 \
   -p 12345:12345 -p 12345:12345/udp \
   -v `pwd`/downloads:/downloads \
-  -v `pwd`/config:/etc/transmission
+  -v `pwd`/config:/etc/transmission \
+  --name=transmission \
   chrodriguez/transmission
 ```
 
