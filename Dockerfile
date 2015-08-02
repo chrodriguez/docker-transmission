@@ -17,6 +17,11 @@ RUN add-apt-repository -y ppa:transmissionbt/ppa && \
     apt-get update && \
     apt-get install -y transmission-daemon python-demjson
 
+RUN apt-get -y autoremove && \
+    apt-get -y clean && \
+    rm -rf /var/lib/apt/lists/* && \
+    rm -rf /tmp/*
+
 COPY docker-entrypoint.sh /entrypoint.sh
 COPY default-settings.json /default-settings.json
 
